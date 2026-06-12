@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Outliers Detector — Test</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f172a;
+      color: #e2e8f0;
+      min-height: 100vh;
+      padding: 30px;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      color: #38bdf8;
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      color: #64748b;
+      font-size: 0.9rem;
+      margin-bottom: 30px;
+    }
+
+    .card {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 24px;
+      margin-bottom: 20px;
+    }
+
+    .card h2 {
+      font-size: 1rem;
+      color: #94a3b8;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .upload-area {
+      border: 2px dashed #334155;
+      border-radius: 8px;
+      padding: 30px;
+      text-align: center;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .upload-area:hover { border-color: #38bdf8; }
+
+    .upload-area input { display: none; }
+
+    .upload-area label {
+      cursor: pointer;
+      color: #38bdf8;
+      font-size: 0.95rem;
+    }
+
+    .upload-area p {
+      color: #64748b;
+      font-size: 0.8rem;
+      margin-top: 6px;
+    }
+
+    .row {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      flex: 1;
+      min-width: 180px;
+    }
+
+    label {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    select, input[type="number"] {
+      background: #0f172a;
+      border: 1px solid #334155;
+      color: #e2e8f0;
+      padding: 10px 12px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+
+    select:focus, input[type="number"]:focus {
+      border-color: #38bdf8;
+    }
+
+    .checkboxes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 4px;
+    }
+
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 6px;
+      padding: 6px 12px;
+      cursor: pointer;
+      transition: border-color 0.2s;
+    }
+
+    .checkbox-item:hover { border-color: #38bdf8; }
+
+    .checkbox-item input { accent-color: #38bdf8; }
+
+    .checkbox-item span { font-size: 0.85rem; }
+
+    button {
+      background: #38bdf8;
+      color: #0f172a;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 8px;
+    }
+
+    button:hover { background: #7dd3fc; }
+
+    button:disabled {
+      background: #334155;
+      color: #64748b;
+      cursor: not-allowed;
+    }
+
+    .btn-danger {
+      background: #ef4444;
+      color: white;
+    }
+
+    .btn-danger:hover { background: #f87171; }
+
+    .preview-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      overflow-x: auto;
+      display: block;
+    }
+
+    .preview-table th {
+      background: #0f172a;
+      color: #38bdf8;
+      padding: 8px 12px;
+      text-align: left;
+      border-bottom: 1px solid #334155;
+      white-space: nowrap;
+    }
+
+    .preview-table td {
+      padding: 7px 12px;
+      border-bottom: 1px solid #1e293b;
+      color: #cbd5e1;
+      white-space: nowrap;
+    }
+
+    .preview-table tr:hover td { background: #1e293b; }
+
+    .result-item {
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+
+    .result-item.has-outliers { border-color: #f59e0b; }
+
+    .result-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .col-name {
+      font-weight: 700;
+      font-size: 1rem;
+      color: #e2e8f0;
+    }
+
+    .badge {
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .badge-warn { background: #78350f; color: #fbbf24; }
+    .badge-ok   { background: #14532d; color: #4ade80; }
+
+    .bounds {
+      font-size: 0.8rem;
+      color: #64748b;
+      margin-bottom: 8px;
+    }
+
+    .values-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .value-tag {
+      background: #7c2d12;
+      color: #fed7aa;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 0.78rem;
+    }
+
+    .info-grid {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 12px;
+    }
+
+    .info-box {
+      background: #0f172a;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      padding: 12px 20px;
+      text-align: center;
+      flex: 1;
+      min-width: 100px;
+    }
+
+    .info-box .val {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #38bdf8;
+    }
+
+    .info-box .lbl {
+      font-size: 0.75rem;
+      color: #64748b;
+      margin-top: 2px;
+    }
+
+    .status {
+      padding: 10px 16px;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      margin-top: 12px;
+    }
+
+    .status.success { background: #14532d; color: #4ade80; }
+    .status.error   { background: #7f1d1d; color: #fca5a5; }
+    .status.info    { background: #1e3a5f; color: #93c5fd; }
+
+    #section-detect, #section-results { display: none; }
+  </style>
+</head>
+<body>
+
+  <h1>🔍 Outliers Detector</h1>
+  <p class="subtitle">Testez la détection d'outliers sur n'importe quel fichier CSV ou Excel</p>
+
+  <!-- ── ÉTAPE 1 : Upload ── -->
+  <div class="card">
+    <h2>① Charger un fichier</h2>
+    <div class="upload-area" onclick="document.getElementById('fileInput').click()">
+      <input type="file" id="fileInput" accept=".csv,.xlsx,.xls" onchange="uploadFile()">
+      <label>📂 Cliquez pour choisir un fichier CSV ou Excel</label>
+      <p>Formats supportés : .csv, .xlsx, .xls</p>
+    </div>
+    <div id="upload-status"></div>
+
+    <!-- Info dataset -->
+    <div class="info-grid" id="info-grid" style="display:none">
+      <div class="info-box"><div class="val" id="info-rows">—</div><div class="lbl">Lignes</div></div>
+      <div class="info-box"><div class="val" id="info-cols">—</div><div class="lbl">Colonnes</div></div>
+      <div class="info-box"><div class="val" id="info-analysable">—</div><div class="lbl">Colonnes analysables</div></div>
+    </div>
+
+    <!-- Preview -->
+    <div id="preview-container" style="margin-top:16px; display:none">
+      <p style="color:#64748b; font-size:0.8rem; margin-bottom:8px">Aperçu des 5 premières lignes :</p>
+      <div style="overflow-x:auto">
+        <table class="preview-table" id="preview-table"></table>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── ÉTAPE 2 : Détection ── -->
+  <div class="card" id="section-detect">
+    <h2>② Configurer la détection</h2>
+
+    <div style="margin-bottom:16px">
+      <label>Colonnes à analyser</label>
+      <div class="checkboxes" id="col-checkboxes"></div>
+    </div>
+
+    <div class="row">
+      <div class="field">
+        <label>Méthode</label>
+        <select id="method" onchange="updateFactorLabel()">
+          <option value="iqr">IQR</option>
+          <option value="zscore">Z-Score</option>
+          <option value="grubbs">Grubbs</option>
+        </select>
+      </div>
+      <div class="field">
+        <label id="factor-label">Seuil IQR (1.5 strict — 3.0 modéré)</label>
+        <input type="number" id="factor" value="1.5" step="0.5" min="0.5" max="10">
+      </div>
+    </div>
+
+    <button onclick="detectOutliers()">🔍 Détecter les outliers</button>
+  </div>
+
+  <!-- ── ÉTAPE 3 : Résultats ── -->
+  <div class="card" id="section-results">
+    <h2>③ Résultats</h2>
+    <div id="results-container"></div>
+
+    <div style="margin-top:20px" id="action-section">
+      <h2 style="margin-bottom:12px">④ Appliquer une action</h2>
+      <div class="row">
+        <div class="field">
+          <label>Colonne cible</label>
+          <select id="action-col"></select>
+        </div>
+        <div class="field">
+          <label>Action</label>
+          <select id="action-type">
+            <option value="ignore">Ignorer</option>
+            <option value="delete">Supprimer les lignes</option>
+            <option value="replace_median">Remplacer par médiane</option>
+            <option value="replace_mean">Remplacer par moyenne</option>
+            <option value="mark">Marquer comme outlier</option>
+          </select>
+        </div>
+      </div>
+      <button onclick="applyAction()">✅ Appliquer</button>
+      <div id="action-status"></div>
+    </div>
+  </div>
+
+<script>
+  const API = "http://127.0.0.1:8000";
+  let analysableCols = [];
+
+  // ── Upload ──
+  async function uploadFile() {
+    const file = document.getElementById("fileInput").files[0];
+    if (!file) return;
+
+    showStatus("upload-status", `⏳ Chargement de "${file.name}"...`, "info");
+
+    const form = new FormData();
+    form.append("file", file);
+
+    try {
+      const res = await fetch(`${API}/upload`, { method: "POST", body: form });
+      const data = await res.json();
+
+      showStatus("upload-status", `✅ Fichier chargé avec succès`, "success");
+
+      // Info
+      document.getElementById("info-rows").textContent = data.rows.toLocaleString();
+      document.getElementById("info-cols").textContent = data.columns;
+      document.getElementById("info-analysable").textContent = data.analysable_columns.length;
+      document.getElementById("info-grid").style.display = "flex";
+
+      // Preview
+      renderPreview(data.preview);
+
+      // Colonnes analysables
+      analysableCols = data.analysable_columns;
+      renderCheckboxes(analysableCols);
+
+      document.getElementById("section-detect").style.display = "block";
+      document.getElementById("section-results").style.display = "none";
+
+    } catch (e) {
+      showStatus("upload-status", "❌ Erreur : serveur inaccessible. Lance uvicorn.", "error");
+    }
+  }
+
+  // ── Preview table ──
+  function renderPreview(rows) {
+    if (!rows || rows.length === 0) return;
+    const table = document.getElementById("preview-table");
+    const cols = Object.keys(rows[0]);
+
+    let html = "<thead><tr>" + cols.map(c => `<th>${c}</th>`).join("") + "</tr></thead><tbody>";
+    rows.forEach(row => {
+      html += "<tr>" + cols.map(c => `<td>${row[c] ?? ""}</td>`).join("") + "</tr>";
+    });
+    html += "</tbody>";
+
+    table.innerHTML = html;
+    document.getElementById("preview-container").style.display = "block";
+  }
+
+  // ── Checkboxes colonnes ──
+  function renderCheckboxes(cols) {
+    const container = document.getElementById("col-checkboxes");
+    container.innerHTML = cols.map(col => `
+      <label class="checkbox-item">
+        <input type="checkbox" value="${col}" checked>
+        <span>${col}</span>
+      </label>
+    `).join("");
+  }
+
+  // ── Label seuil ──
+  function updateFactorLabel() {
+    const method = document.getElementById("method").value;
+    const label = document.getElementById("factor-label");
+    const input = document.getElementById("factor");
+
+    if (method === "iqr") {
+      label.textContent = "Seuil IQR (1.5 strict — 3.0 modéré)";
+      input.value = 1.5;
+    } else if (method === "zscore") {
+      label.textContent = "Seuil Z-Score (2.0 strict — 3.0 modéré)";
+      input.value = 3.0;
+    } else {
+      label.textContent = "Alpha Grubbs (0.05 standard)";
+      input.value = 0.05;
+      input.step = 0.01;
+    }
+  }
+
+  // ── Détecter ──
+  async function detectOutliers() {
+    const checked = [...document.querySelectorAll("#col-checkboxes input:checked")];
+    if (checked.length === 0) {
+      alert("Sélectionne au moins une colonne.");
+      return;
+    }
+
+    const columns = checked.map(c => c.value).join(",");
+    const method  = document.getElementById("method").value;
+    const factor  = document.getElementById("factor").value;
+
+    const form = new FormData();
+    form.append("method", method);
+    form.append("columns", columns);
+    form.append("factor", factor);
+
+    try {
+      const res  = await fetch(`${API}/detect`, { method: "POST", body: form });
+      const data = await res.json();
+
+      renderResults(data.results);
+      document.getElementById("section-results").style.display = "block";
+
+    } catch (e) {
+      alert("Erreur lors de la détection.");
+    }
+  }
+
+  // ── Afficher résultats ──
+  function renderResults(results) {
+    const container = document.getElementById("results-container");
+    const actionCol = document.getElementById("action-col");
+
+    let html = "";
+    actionCol.innerHTML = "";
+
+    for (const [col, res] of Object.entries(results)) {
+      const hasOutliers = res.outlier_count > 0;
+      const badge = hasOutliers
+        ? `<span class="badge badge-warn">⚠️ ${res.outlier_count} outlier(s)</span>`
+        : `<span class="badge badge-ok">✅ Aucun outlier</span>`;
+
+      const bounds = res.lower_bound != null
+        ? `<div class="bounds">Bornes : [${res.lower_bound} — ${res.upper_bound}]</div>`
+        : "";
+
+      const values = hasOutliers
+        ? `<div class="values-list">${res.outlier_values.map(v =>
+            `<span class="value-tag">${v}</span>`).join("")}
+            ${res.outlier_count > 10 ? `<span class="value-tag">+${res.outlier_count - 10} autres...</span>` : ""}
+           </div>`
+        : "";
+
+      html += `
+        <div class="result-item ${hasOutliers ? "has-outliers" : ""}">
+          <div class="result-header">
+            <span class="col-name">${col}</span>
+            ${badge}
+          </div>
+          ${bounds}
+          ${values}
+        </div>`;
+
+      if (hasOutliers) {
+        actionCol.innerHTML += `<option value="${col}">${col} (${res.outlier_count})</option>`;
+      }
+    }
+
+    container.innerHTML = html;
+    document.getElementById("action-section").style.display =
+      actionCol.options.length > 0 ? "block" : "none";
+  }
+
+  // ── Helper status ──
+  function showStatus(id, msg, type) {
+    const el = document.getElementById(id);
+    el.innerHTML = `<div class="status ${type}">${msg}</div>`;
+  }
+</script>
+</body>
+</html>
