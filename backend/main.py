@@ -6,6 +6,8 @@ from backend.routers.outliers import router as outliers_router
 from backend.routers.deduplication import router as dedup_router
 from backend.routers.type_correction import router as type_router
 from dotenv import load_dotenv
+from backend.routers.sampling import router as sampling_router
+
 
 load_dotenv()
 app = FastAPI(
@@ -24,3 +26,4 @@ app.include_router(upload_router)
 app.include_router(outliers_router)
 app.include_router(dedup_router)
 app.include_router(type_router)
+app.include_router(sampling_router)
