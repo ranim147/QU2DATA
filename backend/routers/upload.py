@@ -4,7 +4,7 @@ import polars as pl
 import io
 import uuid
 
-from backend.storage.dataset_store import save_dataset
+from backend.storage.dataset_store import init_dataset
 
 router = APIRouter(tags=["Upload"])
 
@@ -41,7 +41,7 @@ async def upload_file(file: UploadFile = File(...)):
         return {"error": f"Impossible de lire le fichier : {str(e)}"}
 
     dataset_id = str(uuid.uuid4())
-    save_dataset(dataset_id, df)
+    init_dataset(dataset_id, df)
 
     missing_values = {col: int(df[col].null_count()) for col in df.columns}
     dtypes = {col: str(df[col].dtype) for col in df.columns}

@@ -1,6 +1,6 @@
-from fastapi import APIRouter, Form
+from fastapi import APIRouter,Query, Form
 
-from backend.storage.dataset_store import get_dataset, update_dataset
+from backend.storage.dataset_store import get_dataset, save_dataset
 from backend.services.outliers_service import (
     detect_outliers,
     detect_outliers_dataframe,
@@ -14,12 +14,12 @@ router = APIRouter(
 )
 
 
-@router.post("/detect")
+@router.get("/detect")
 async def detect(
-    dataset_id: str = Form(...),
-    method: str = Form(..., description="Méthode : iqr | zscore | grubbs"),
-    columns: str = Form(..., description="Colonnes séparées par virgule ex: Age,Salaire"),
-    factor: float = Form(1.5, ge=0.01, le=10.0)
+    dataset_id: str = Query(...),
+    method: str = Query(...),
+    columns: str = Query(...),
+    factor: float = Query(1.5, ge=0.01, le=10.0)
 ):
     df = get_dataset(dataset_id)
     if df is None:
@@ -43,6 +43,9 @@ async def detect(
     else:
         return {"error": "Méthode inconnue"}
 
+    # Sauvegarde du dataset dans preview pour que /apply puisse l'utiliser directement
+    save_dataset(dataset_id, df, stage="preview")
+
     return {"results": clean_for_json(results)}
 
 
@@ -54,9 +57,10 @@ async def apply(
     method: str = Form("iqr", description="Méthode : iqr | zscore | grubbs"),
     factor: float = Form(1.5, ge=0.01, le=10.0)
 ):
-    df = get_dataset(dataset_id)
+    # Lit le preview sauvegardé par /detect
+    df = get_dataset(dataset_id, stage="preview")
     if df is None:
-        return {"error": "Dataset introuvable"}
+        return {"error": "Lance d'abord /outliers/detect"}
 
     if df.is_empty():
         return {"error": "Aucune donnée disponible."}
@@ -75,10 +79,11 @@ async def apply(
 
     df_clean = apply_action(df, column, result["outlier_indices"], action)
 
-    update_dataset(dataset_id, df_clean)
+    # Réécrit le preview avec le résultat de l'action
+    save_dataset(dataset_id, df_clean, stage="preview")
 
     return {
-        "message": f"Action {action} appliquée",
+        "message": f"Action {action} appliquée. Appelle /dataset/apply-preview pour confirmer.",
         "outliers_traités": result["outlier_count"],
         "preview": clean_for_json(df_clean.head(5).to_dicts())
     }

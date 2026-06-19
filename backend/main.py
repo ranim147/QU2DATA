@@ -5,6 +5,7 @@ from backend.routers.upload import router as upload_router
 from backend.routers.outliers import router as outliers_router
 from backend.routers.deduplication import router as dedup_router
 from backend.routers.type_correction import router as type_router
+from routers import crosstab, dataset, log_transform
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -24,3 +25,8 @@ app.include_router(upload_router)
 app.include_router(outliers_router)
 app.include_router(dedup_router)
 app.include_router(type_router)
+
+
+app.include_router(crosstab.router)
+app.include_router(dataset.router)
+app.include_router(log_transform.router)
