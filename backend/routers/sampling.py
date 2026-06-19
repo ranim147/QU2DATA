@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Form
-from backend.storage.dataset_store import get_dataset, update_dataset
+from backend.storage.dataset_store import get_dataset, save_dataset
 from backend.services.sampling_service import (
     stratified_sample,
     bootstrap_sample,
@@ -28,7 +28,7 @@ async def stratified(
     if "error" in result:
         return result
 
-    update_dataset(dataset_id, result["df"])
+    save_dataset(dataset_id, result["df"], stage="preview")
 
     return {
         "message": f"Échantillonnage stratifié appliqué ({result['mode']})",
@@ -55,7 +55,7 @@ async def bootstrap(
     if "error" in result:
         return result
 
-    update_dataset(dataset_id, result["df"])
+    save_dataset(dataset_id, result["df"], stage="preview")
 
     return {
         "message": f"Échantillonnage bootstrap appliqué (n={n})",
