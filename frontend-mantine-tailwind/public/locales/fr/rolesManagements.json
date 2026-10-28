@@ -1,0 +1,34 @@
+{
+  "title": "Gestion des rôles",
+  "role": "Role",
+  "permissions": {
+    "name": "Nom",
+    "flag": "Indicateur",
+    "confirm": {
+      "affect": {
+        "description": "Êtes-vous sûr de vouloir affecter cette permission à {{role}} ?",
+        "title": "Affecter la permission"
+      }
+    }
+  },
+  "access": {
+    "can_create": "Créer",
+    "can_delete": "Supprimer",
+    "can_update": "Mettre à jour",
+    "can_show": "Afficher",
+    "can_show_own": "Afficher les propres",
+    "isFullAccess": "Accès complet"
+  },
+  "number_of_users": "Number of users",
+  "number_of_accesses": "Number of accesses",
+  "create": "Créer un nouveau rôle",
+  "errors": {
+    "role_already_exist": "Le rôle existe déjà."
+  },
+  "confirm": {
+    "delete": {
+      "description": "Êtes-vous sûr de vouloir supprimer ce rôle ?",
+      "title": "Supprimer le rôle"
+    }
+  }
+}

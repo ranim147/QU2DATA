@@ -1,0 +1,22 @@
+{
+  "stepper": {
+    "firstStep": { "label": "Compte créé" },
+    "secondStep": { "label": "Vérification" },
+    "finalStep": { "label": "Accès activé" }
+  },
+  "step1_title": "Vérifiez votre boîte mail",
+  "step1_desc": "Cliquez sur le bouton ci-dessous pour recevoir votre email de validation. Vérifiez également vos spams.",
+  "sendValidationEmail": "Envoyer l'email de validation",
+  "sending": "Envoi en cours…",
+  "email_sent_hint": "Email envoyé — vérifiez votre boîte de réception et vos spams.",
+  "we_have_sent_you_an_email": "Email envoyé avec succès. Vérifiez votre boîte de réception.",
+  "try_again": "Renvoyer l'email",
+  "success_title": "Compte activé !",
+  "validation_with_success": "Votre compte a été validé avec succès. Vous allez être redirigé vers votre tableau de bord.",
+  "redirect_hint": "Redirection automatique dans quelques secondes…",
+  "error_title": "Lien invalide",
+  "something_went_wrong": "Ce lien est expiré ou invalide. Veuillez demander un nouvel email de validation.",
+  "back_to_login": "Retour à la connexion",
+  "verifying_title": "Vérification en cours…",
+  "verifying_desc": "Veuillez patienter pendant que nous validons votre lien."
+}

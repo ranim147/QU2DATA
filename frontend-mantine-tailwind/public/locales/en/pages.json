@@ -1,0 +1,37 @@
+{
+  "page_eyebrow": "STUDIO",
+  "page_title": "Report Studio",
+
+  "add_page": "Add page",
+  "rename_page": "Rename page",
+  "delete_page": "Delete page",
+  "delete_confirm": "Delete page \"{{title}}\"?",
+
+  "load_error": "Unable to load pages. Please try again in a moment.",
+
+  "format_label": "Page format",
+  "orientation_portrait": "Portrait",
+  "orientation_landscape": "Landscape",
+  "width_label": "Width (px)",
+  "height_label": "Height (px)",
+
+  "format_group_paper": "Paper",
+  "format_group_screen": "Screen",
+  "format_group_custom": "Custom",
+
+  "format_a4": "A4 (210 × 297 mm)",
+  "format_a3": "A3 (297 × 420 mm)",
+  "format_a2": "A2 (420 × 594 mm)",
+  "format_a1": "A1 (594 × 841 mm)",
+  "format_a0": "A0 (841 × 1189 mm)",
+  "format_letter": "Letter (8.5 × 11 in)",
+  "format_legal": "Legal (8.5 × 14 in)",
+  "format_tabloid": "Tabloid (11 × 17 in)",
+  "format_sixteen_nine": "16:9 (screen)",
+  "format_four_three": "4:3 (screen)",
+  "format_custom": "Custom",
+
+  "page_indicator": "Page {{current}}/{{total}}",
+  "previous_page": "Previous page",
+  "next_page": "Next page"
+}

@@ -1,0 +1,11 @@
+{
+  "welcome_title": "Bienvenue !",
+  "welcome_description": "Bienvenue ! Votre compte a été créé avec succès.",
+  "email": "Email",
+  "password": "Mot de passe",
+  "confirm_password": "Confirmer le mot de passe",
+  "sing_up_button": "S'inscrire",
+  "go_to_login": "Vous avez déjà un compte ? Connectez-vous !",
+  "passwords_do_not_match": "Les mots de passe ne correspondent pas",
+  "email_already_exists": "Un compte avec cet email existe déjà"
+}

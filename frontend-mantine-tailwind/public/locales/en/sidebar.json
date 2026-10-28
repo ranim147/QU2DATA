@@ -1,0 +1,14 @@
+{
+  "roles": "Management of roles",
+  "users": "Management of users",
+  "applications": "Management of applications",
+  "contacts": "Contacts",
+  "resources": "Resources",
+  "blogs": "Blogs",
+  "projects": "Projects",
+  "data_source": "Data Source",
+  "transformations": "Transformations",
+  "Sampling": "Sampling",
+  "data-quality": "Data Quality",
+  "dictionary": "Dictionary"
+}

@@ -1,0 +1,29 @@
+{
+  "search_placeholder": "Rechercher dans {{count}} variables...",
+  "load_error": "Impossible de charger les variables. Réessayez dans un instant.",
+  "list_empty": "Aucune variable ne correspond à votre recherche.",
+
+  "col_name": "Nom",
+  "col_label": "Libellé",
+  "col_type": "Type",
+  "col_scale": "Échelle",
+  "col_visible": "Vis.",
+  "col_weight": "Poids",
+
+  "type_metric": "Numérique",
+  "type_dimension": "Catégorielle",
+  "type_time": "Temporelle",
+  "type_text": "Texte",
+  "type_boolean": "Booléen",
+  "type_category": "Catégorie",
+
+  "scale_nominal": "Nominale",
+  "scale_ordinal": "Ordinale",
+  "scale_interval": "Intervalle",
+  "scale_ratio": "Ratio",
+
+  "hide_variable": "Masquer la variable",
+  "show_variable": "Afficher la variable",
+  "delete_variable": "Supprimer la variable",
+  "delete_confirm": "Supprimer la variable \"{{name}}\" ?"
+}

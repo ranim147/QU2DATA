@@ -1,0 +1,85 @@
+.connectorCard {
+  width: 100%;
+  min-height: 92px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-align: left;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #dfe4ea;
+  border-radius: 16px;
+  box-shadow: 0 3px 9px rgba(17, 24, 39, 0.06);
+  transition: border-color 150ms ease, box-shadow 150ms ease, transform 150ms ease;
+
+  &:hover:not(:disabled) {
+    border-color: #84bf43;
+    box-shadow: 0 8px 20px rgba(47, 67, 34, 0.11);
+    transform: translateY(-1px);
+  }
+
+  strong, small { display: block; }
+  strong { color: #111827; font-size: 16px; margin-bottom: 4px; }
+  small { color: #667085; font-size: 13px; }
+}
+
+.disabledCard { cursor: not-allowed; opacity: 0.68; }
+.connectorIcon { width: 50px; height: 50px; flex: 0 0 50px; display: grid; place-items: center; border-radius: 13px; }
+.green { color: #059669; background: #e9fbf3; }
+.blue { color: #0284c7; background: #e7f6fc; }
+.purple { color: #6366f1; background: #efedff; }
+.savedSources { margin-top: 22px; padding: 16px; border: 1px solid #e5e7eb; border-radius: 14px; background: #fff; }
+.savedSource { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px; border-radius: 10px; background: #f8fafc; }
+
+.connectionActions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 3px;
+}
+
+.connectionStatus {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+
+  i {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+}
+
+.valid { color: #16a34a; i { background: #22c55e; box-shadow: 0 0 0 3px #dcfce7; } }
+.invalid { color: #dc2626; i { background: #ef4444; box-shadow: 0 0 0 3px #fee2e2; } }
+.unknown { color: #6b7280; i { background: #9ca3af; box-shadow: 0 0 0 3px #f3f4f6; } }
+
+.resourceRow {
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  border: 1px solid #e5e7eb;
+  border-radius: 11px;
+  background: #f8fafc;
+
+  &:hover {
+    border-color: #84bf43;
+    background: #f6fbea;
+  }
+}
+
+.resourceIcon {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  color: #548828;
+  border-radius: 8px;
+  background: #eff8df;
+}

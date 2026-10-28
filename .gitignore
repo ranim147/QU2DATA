@@ -1,6 +1,25 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/.claude.DS_Store
+.Rhistory
+
+# Local environment files
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# Local credentials (use the example files to configure the application)
+/backend/src/Config/config.json
+/backend/src/Config/transporterConfig.json
+
+# Separate clone of the remote repository
+/QU2DATA/
+
+# Rules retained from the remote repository
 __pycache__/
 *.pyc
-.env
 .venv
 venv
 backend/.env

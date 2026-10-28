@@ -1,0 +1,10 @@
+{
+  "title": "titre",
+  "bad_credentials": "Identifiants incorrects. Veuillez réessayer.",
+  "ops_error": "Une erreur est survenue. Veuillez réessayer plus tard.",
+  "create": "Ajouter",
+  "select": "Sélectionner un élément",
+  "delete": "Supprimer",
+  "cancel": "Annuler",
+  "save": "Enregistrer"
+}

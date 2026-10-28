@@ -1,0 +1,33 @@
+{
+  "title": "Management of roles",
+  "permissions": {
+    "name": "Name",
+    "flag": "flag",
+    "confirm": {
+      "affect": {
+        "description": "Are you sure you want to assign this permission to {{role}}?",
+        "title": "Assign Permission"
+      }
+    }
+  },
+  "access": {
+    "can_create": "Create",
+    "can_delete": "Delete",
+    "can_update": "Update",
+    "can_show": "Show",
+    "can_show_own": "Show Own",
+    "isFullAccess": "Full Access"
+  },
+  "number_of_users": "Number of users",
+  "number_of_accesses": "Number of accesses",
+  "create": "Create a new Role",
+  "errors": {
+    "role_already_exist": "The role already exists."
+  },
+  "confirm": {
+    "delete": {
+      "description": "Are you sure you want to delete this role? ",
+      "title": "Delete Role"
+    }
+  }
+}

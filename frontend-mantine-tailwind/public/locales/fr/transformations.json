@@ -1,0 +1,248 @@
+{
+  "catalog": {
+    "standardization": "Standardiser",
+    "normalization": "Normalisation",
+    "encoding": "Encodage 0/1",
+    "logTransform": "Transformation logarithmique",
+    "binning": "Discrétiser",
+    "recode": "Recoder",
+    "view": "Afficher les lignes",
+    "sort": "Trier les lignes",
+    "filter": "Filtrer les lignes",
+    "concat": "Concaténer",
+    "calculate": "Calculer une variable",
+    "typeCorrection": "Corriger les types"
+  },
+  "typeCorrection": {
+    "title": "Correction des types",
+    "description": "Examinez les recommandations et testez une conversion en toute sécurité avant de modifier le dataset courant.",
+    "catalogDescription": "Auto-cast date · num · bool",
+    "correct": "Types corrects",
+    "toCorrect": "Colonnes à vérifier ou corriger",
+    "manual": "Correction manuelle",
+    "column": "Colonne",
+    "currentType": "Type actuel",
+    "suggestedType": "Type suggéré",
+    "targetType": "Type cible",
+    "reason": "Raison",
+    "test": "Tester la conversion",
+    "loadingRecommendations": "Chargement des recommandations de types…",
+    "noRecommendations": "Aucune recommandation dans cette section.",
+    "conversionFailures_one": "{{count}} valeur ne peut pas être convertie et sera remplacée par null.",
+    "conversionFailures_other": "{{count}} valeurs ne peuvent pas être converties et seront remplacées par null.",
+    "confirmWarning": "Confirmer la conversion avec perte de données",
+    "confirm": "Confirmer malgré les pertes",
+    "cancel": "Annuler",
+    "success": "Correction de type appliquée avec succès.",
+    "recommendationError": "Les recommandations de types n’ont pas pu être chargées.",
+    "conversionError": "La conversion de type a échoué.",
+    "historyName": "Correction de type",
+    "types": { "Int64": "Entier", "Float64": "Décimal", "String": "Texte", "Boolean": "Booléen", "Date": "Date", "Datetime": "Date et heure" }
+  },
+  "concat": {
+    "title": "Concaténer des colonnes",
+    "description": "Combine plusieurs colonnes dans une nouvelle colonne selon l’ordre sélectionné.",
+    "catalogDescription": "Combiner plusieurs colonnes",
+    "columns": "Colonnes à combiner",
+    "orderHelp": "Les colonnes sont concaténées dans leur ordre de sélection.",
+    "separator": "Séparateur",
+    "separatorHelp": "Laissez vide pour joindre les valeurs sans séparateur.",
+    "newColumn": "Nom de la nouvelle colonne",
+    "keepOriginal": "Conserver les colonnes originales",
+    "overwrite": "Autoriser le remplacement d’une colonne destination existante",
+    "submit": "Appliquer la concaténation",
+    "historyName": "Concaténation de colonnes",
+    "success": "Colonnes concaténées avec succès.",
+    "errors": {
+      "create": "La transformation de concaténation n’a pas pu être créée.",
+      "execute": "La concaténation des colonnes a échoué."
+    },
+    "validation": {
+      "columns": "Sélectionnez au moins deux colonnes différentes.",
+      "newColumn": "Saisissez un nom de colonne destination."
+    }
+  },
+  "calculate": {
+    "title": "Calculer une variable",
+    "description": "Crée une colonne numérique avec une formule utilisant les colonnes sélectionnées.",
+    "catalogDescription": "Créer une colonne avec une formule",
+    "columns": "Colonnes numériques utilisées par la formule",
+    "newColumn": "Nom de la nouvelle colonne",
+    "formula": "Formule",
+    "formulaHelp": "Opérations supportées : +, -, *, /, **, %, parenthèses, abs() et round().",
+    "examples": "Exemples : Price * Quantity · round(Revenue / Units, 2) · abs(Balance)",
+    "keepOriginal": "Conserver les colonnes sources",
+    "overwrite": "Autoriser le remplacement d’une colonne destination existante",
+    "submit": "Calculer la colonne",
+    "historyName": "Colonne calculée",
+    "success": "Colonne calculée avec succès.",
+    "errors": {
+      "create": "La transformation de calcul n’a pas pu être créée.",
+      "execute": "Le calcul de la colonne a échoué."
+    },
+    "validation": {
+      "columns": "Sélectionnez au moins une colonne numérique sans doublon.",
+      "newColumn": "Saisissez un nom de colonne destination.",
+      "formula": "Saisissez une formule valide de 1000 caractères maximum."
+    }
+  },
+  "standardization": {
+    "title": "Standardiser les colonnes numériques",
+    "description": "Met à l’échelle les colonnes numériques sélectionnées et actualise immédiatement le dataset courant.",
+    "columnsLabel": "Colonnes numériques",
+    "columnsDescription": "Sélectionnez une ou plusieurs colonnes numériques à standardiser.",
+    "columnsPlaceholder": "Sélectionner des colonnes numériques",
+    "methodLabel": "Méthode de standardisation",
+    "previewLimitLabel": "Limite du preview",
+    "previewLimitDescription": "Nombre de lignes générées dans le preview backend (1–500).",
+    "noNumericColumns": "Aucune colonne numérique n’est disponible dans le dataset chargé.",
+    "submit": "Standardiser",
+    "historyName": "Standardisation",
+    "success": "Standardisation appliquée avec succès.",
+    "errors": {
+      "create": "La transformation de standardisation n’a pas pu être créée.",
+      "execute": "La standardisation a échoué."
+    },
+    "methods": {
+      "zScore": "Score Z",
+      "minMax": "Min-max",
+      "robust": "Robuste (médiane et IQR)"
+    },
+    "validation": {
+      "columns": "Sélectionnez au moins une colonne numérique.",
+      "previewLimit": "La limite du preview doit être un entier compris entre 1 et 500."
+    }
+  },
+  "normalization": {
+    "title": "Normaliser les colonnes numériques",
+    "description": "Applique une mise à l’échelle Min-Max aux colonnes numériques sélectionnées et actualise immédiatement le dataset courant.",
+    "columnsLabel": "Colonnes numériques",
+    "columnsDescription": "Sélectionnez une ou plusieurs colonnes numériques à normaliser.",
+    "columnsPlaceholder": "Sélectionner des colonnes numériques",
+    "previewLimitLabel": "Limite du preview",
+    "previewLimitDescription": "Nombre de lignes générées dans le preview backend (1–500).",
+    "noNumericColumns": "Aucune colonne numérique n’est disponible dans le dataset chargé.",
+    "submit": "Normaliser",
+    "historyName": "Normalisation - Min-Max",
+    "success": "Normalisation appliquée avec succès.",
+    "errors": {
+      "create": "La transformation de normalisation n’a pas pu être créée.",
+      "execute": "La normalisation a échoué."
+    },
+    "validation": {
+      "columns": "Sélectionnez au moins une colonne numérique sans doublon.",
+      "previewLimit": "La limite du preview doit être un entier compris entre 1 et 500."
+    }
+  },
+  "encoding": {
+    "title": "Encodage 0/1",
+    "description": "Convertit les valeurs catégorielles en colonnes binaires 0/1 et actualise immédiatement le dataset courant.",
+    "columnsLabel": "Colonnes à encoder",
+    "columnsDescription": "Les colonnes texte, booléennes et numériques à faible cardinalité détectées sont proposées.",
+    "columnsPlaceholder": "Sélectionner des colonnes catégorielles",
+    "dropFirstLabel": "Supprimer la première catégorie",
+    "dropFirstDescription": "Omet la première catégorie triée afin de réduire les colonnes indicatrices redondantes.",
+    "dropOriginalLabel": "Supprimer les colonnes originales",
+    "dropOriginalDescription": "Supprime les colonnes sources sélectionnées après la création de leurs colonnes binaires.",
+    "previewLimitLabel": "Nombre de lignes d’aperçu",
+    "noColumns": "Aucune colonne catégorielle adaptée n’a été détectée dans les lignes chargées.",
+    "submit": "Appliquer l’encodage",
+    "historyName": "Encodage 0/1",
+    "success": "Encodage appliqué avec succès.",
+    "errors": {
+      "create": "La transformation d’encodage n’a pas pu être créée.",
+      "execute": "L’encodage 0/1 a échoué."
+    },
+    "validation": {
+      "columns": "Sélectionnez au moins une colonne sans doublon.",
+      "previewLimit": "Le nombre de lignes d’aperçu doit être un entier compris entre 1 et 500."
+    }
+  },
+  "logTransform": {
+    "title": "Transformation logarithmique",
+    "description": "Analyse l’asymétrie puis applique une transformation logarithmique compatible aux colonnes numériques éligibles.",
+    "columnsLabel": "Colonnes numériques",
+    "columnsPlaceholder": "Sélectionner une ou plusieurs colonnes numériques",
+    "methodLabel": "Méthode logarithmique",
+    "actionLabel": "Action",
+    "actions": {
+      "replace": "Remplacer les valeurs originales",
+      "newColumn": "Créer une nouvelle colonne _log",
+      "ignore": "Ne pas modifier les valeurs"
+    },
+    "analyze": "Analyser l’éligibilité",
+    "apply": "Appliquer la transformation",
+    "noNumericColumns": "Aucune colonne numérique n’est disponible dans le dataset chargé.",
+    "yes": "Oui",
+    "no": "Non",
+    "results": {
+      "column": "Colonne",
+      "eligible": "Éligible",
+      "reason": "Raison",
+      "before": "Asymétrie avant",
+      "after": "Asymétrie après",
+      "min": "Minimum"
+    },
+    "historyName": "Transformation logarithmique",
+    "success": "Transformation logarithmique appliquée avec succès.",
+    "errors": {
+      "analyze": "L’analyse de la transformation logarithmique a échoué.",
+      "create": "La transformation logarithmique n’a pas pu être créée.",
+      "execute": "La transformation logarithmique a échoué."
+    },
+    "validation": {
+      "columns": "Sélectionnez au moins une colonne numérique sans doublon."
+    }
+  },
+  "binning": {
+    "title": "Discrétiser une colonne numérique",
+    "description": "Crée une colonne catégorielle à partir d’intervalles numériques inclusifs explicites. Les règles sont évaluées dans l’ordre affiché.",
+    "source": "Colonne numérique source",
+    "newColumn": "Nom de la nouvelle colonne",
+    "rules": "Règles de discrétisation",
+    "label": "Libellé",
+    "min": "Minimum",
+    "max": "Maximum",
+    "defaultValue": "Valeur par défaut hors intervalles (optionnelle)",
+    "keepOriginal": "Conserver la colonne originale",
+    "overwrite": "Autoriser le remplacement d’une colonne destination existante",
+    "addRule": "Ajouter un intervalle",
+    "remove": "Supprimer",
+    "submit": "Appliquer la discrétisation",
+    "historyName": "Discrétisation",
+    "success": "Discrétisation appliquée avec succès.",
+    "errors": { "create": "La transformation de discrétisation n’a pas pu être créée.", "execute": "La discrétisation a échoué." },
+    "validation": { "source": "Sélectionnez une colonne numérique source.", "newColumn": "Saisissez un nom de colonne destination.", "rules": "Ajoutez au moins un intervalle valide avec un libellé et un minimum inférieur ou égal au maximum." }
+  },
+  "rowOperations": {
+    "readOnly": "Opération d’affichage uniquement. Le dataset courant n’est jamais appliqué ni modifié.",
+    "view": { "title": "Afficher les lignes" },
+    "sort": { "title": "Trier les lignes affichées" },
+    "filter": { "title": "Filtrer les lignes affichées" },
+    "page": "Page", "pageSize": "Lignes par page", "columns": "Colonnes affichées (optionnel)",
+    "logic": "Combiner les conditions", "value": "Valeur", "asc": "Croissant", "desc": "Décroissant",
+    "addSort": "Ajouter un critère de tri", "addFilter": "Ajouter une condition", "remove": "Supprimer",
+    "run": "Rafraîchir le tableau affiché", "reset": "Réinitialiser", "result": "Résultat affiché",
+    "success": "Le tableau affiché a été rafraîchi. current.csv reste inchangé.", "error": "L’opération sur les lignes a échoué.",
+    "validation": { "sort": "Ajoutez au moins un critère de tri valide.", "filter": "Ajoutez au moins une condition de filtre complète." }
+  },
+  "recode": {
+    "title": "Recoder une colonne",
+    "description": "Crée une nouvelle colonne en associant les valeurs existantes à des valeurs de remplacement.",
+    "source": "Colonne source",
+    "newColumn": "Nom de la nouvelle colonne",
+    "rules": "Règles de recodage",
+    "oldValue": "Valeur existante",
+    "newValue": "Nouvelle valeur",
+    "defaultValue": "Valeur par défaut pour les valeurs non associées (optionnelle)",
+    "keepOriginal": "Conserver la colonne originale",
+    "overwrite": "Autoriser le remplacement d’une colonne destination existante",
+    "addRule": "Ajouter une règle",
+    "remove": "Supprimer",
+    "submit": "Appliquer le recodage",
+    "historyName": "Recodage",
+    "success": "Recodage appliqué avec succès.",
+    "errors": { "create": "La transformation de recodage n’a pas pu être créée.", "execute": "Le recodage a échoué." },
+    "validation": { "source": "Sélectionnez une colonne source.", "newColumn": "Saisissez un nom de colonne destination.", "rules": "Ajoutez au moins une règle de recodage complète.", "duplicates": "Les valeurs existantes doivent être uniques." }
+  }
+}

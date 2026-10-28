@@ -1,0 +1,29 @@
+{
+  "search_placeholder": "Search {{count}} variables...",
+  "load_error": "Unable to load variables. Please try again in a moment.",
+  "list_empty": "No variable matches your search.",
+
+  "col_name": "Name",
+  "col_label": "Label",
+  "col_type": "Type",
+  "col_scale": "Scale",
+  "col_visible": "Vis.",
+  "col_weight": "Weight",
+
+  "type_metric": "Numeric",
+  "type_dimension": "Categorical",
+  "type_time": "Temporal",
+  "type_text": "Text",
+  "type_boolean": "Boolean",
+  "type_category": "Category",
+
+  "scale_nominal": "Nominal",
+  "scale_ordinal": "Ordinal",
+  "scale_interval": "Interval",
+  "scale_ratio": "Ratio",
+
+  "hide_variable": "Hide variable",
+  "show_variable": "Show variable",
+  "delete_variable": "Delete variable",
+  "delete_confirm": "Delete variable \"{{name}}\"?"
+}

@@ -1,0 +1,69 @@
+{
+  "title": "Sampling",
+  "subtitle": "Choose a method, configure the draw and apply it to the active file.",
+  "activeFile": "Active file",
+  "activeFileLoading": "Loading file name…",
+  "loadingRoute": "Loading project and file…",
+  "noActiveFile": {"title": "No active file", "description": "Open a project and choose the Sample action for a file."},
+  "methodSelector": {"title": "Sampling method", "description": "Select the strategy that fits your data."},
+  "methods": {
+    "simpleRandom": {"title": "Simple random", "description": "Every row has the same probability of being selected."},
+    "systematic": {"title": "Systematic", "description": "Selects rows at a regular interval."},
+    "stratified": {"title": "Stratified", "description": "Preserves or balances groups from one column."},
+    "bootstrap": {"title": "Bootstrap", "description": "Sampling with replacement for statistical analysis."},
+    "quotas": {"title": "Quotas", "description": "Sets row targets for specific groups."}
+  },
+  "calculator": {
+    "title": "Sample size calculator",
+    "description": "Local estimate using Cochran's formula and finite population correction.",
+    "population": "Population N",
+    "margin": "Margin of error (%)",
+    "prevalence": "Prevalence p (%)",
+    "summary": "n₀ = {{n0}} · n with FPC = {{n}} · z = {{z}} · margin = {{margin}}%",
+    "apply": "Apply n = {{n}}"
+  },
+  "fields": {
+    "sizeMode": "Size mode", "size": "Size", "sampleSize": "Sample size",
+    "optionalSampleSize": "Optional sample size", "seed": "Random seed",
+    "confidence": "Confidence level", "strateColumn": "Stratum column",
+    "mode": "Allocation", "quotaColumns": "Quota columns", "target": "Target",
+    "allowUnderfilled": "Allow underfilled quotas"
+  },
+  "modes": {
+    "n": "Number of rows", "percent": "Percentage", "k": "Interval k",
+    "proportionnel": "Proportional", "equilibre": "Balanced"
+  },
+  "help": {
+    "systematic": {
+      "n": "n is the desired number of rows.",
+      "percent": "The percentage is calculated from the current dataset.",
+      "k": "One row is selected every k rows."
+    },
+    "bootstrap": "Sampling uses replacement, so the same row may appear more than once.",
+    "stratified": {
+      "proportionnel": "Preserves the observed proportions of each stratum.",
+      "equilibre": "Distributes the sample as evenly as possible between strata."
+    }
+  },
+  "validation": {
+    "invalid": "Check the entered values.", "sizePositive": "Size must be greater than 0.",
+    "percentMaximum": "Percentage cannot exceed 100.", "seedInteger": "Seed must be an integer."
+  },
+  "confirmation": {
+    "title": "Confirm sampling",
+    "description": "The result will replace current.csv. original.csv will remain unchanged. Do you want to continue?",
+    "confirm": "Execute"
+  },
+  "actions": {
+    "execute": "Run sampling", "backToProject": "Back to project", "openProject": "Open a project",
+    "addCell": "Add cell", "removeCell": "Remove"
+  },
+  "success": "Sampling applied successfully.",
+  "errors": {"execution": "Sampling failed."},
+  "result": {
+    "title": "Sampling result", "totalRows": "Initial population", "sampleSize": "Selected sample",
+    "seed": "Seed", "confidence": "Confidence", "margin": "Margin of error",
+    "offset": "Offset", "strata": "Number of strata", "quotas": "Requested and selected quotas",
+    "preview": "Preview", "noPreview": "No preview rows were returned."
+  }
+}

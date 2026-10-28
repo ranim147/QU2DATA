@@ -1,0 +1,22 @@
+{
+  "stepper": {
+    "firstStep": { "label": "Account created" },
+    "secondStep": { "label": "Verification" },
+    "finalStep": { "label": "Access granted" }
+  },
+  "step1_title": "Check your inbox",
+  "step1_desc": "Click the button below to receive your validation email. Also check your spam folder.",
+  "sendValidationEmail": "Send validation email",
+  "sending": "Sending…",
+  "email_sent_hint": "Email sent — check your inbox and spam folder.",
+  "we_have_sent_you_an_email": "Email sent successfully. Please check your inbox.",
+  "try_again": "Resend email",
+  "success_title": "Account activated!",
+  "validation_with_success": "Your account has been successfully validated. You will be redirected to your dashboard.",
+  "redirect_hint": "Redirecting automatically in a few seconds…",
+  "error_title": "Invalid link",
+  "something_went_wrong": "This link has expired or is invalid. Please request a new validation email.",
+  "back_to_login": "Back to login",
+  "verifying_title": "Verifying…",
+  "verifying_desc": "Please wait while we validate your link."
+}

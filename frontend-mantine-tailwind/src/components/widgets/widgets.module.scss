@@ -1,0 +1,140 @@
+.toolbar {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 5;
+  height: 72px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.97);
+  border-bottom: 1px solid #e9ecef;
+  box-shadow: 0 4px 16px rgba(20, 25, 18, 0.04);
+}
+
+.toolbarIcon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  color: #111827;
+  background: #eff8df;
+}
+
+.addButton {
+  background: #84bf43;
+  box-shadow: 0 6px 14px rgba(132, 191, 67, 0.24);
+
+  &:hover {
+    background: #73aa36;
+  }
+}
+
+.emptyState {
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #84bf43;
+}
+
+.widgetCard {
+  position: absolute;
+  padding: 20px;
+  overflow: hidden;
+  border: 1px solid #e3e8df;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 5px 16px rgba(37, 50, 29, 0.07);
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.titleCard {
+  padding: 24px 28px;
+  background: linear-gradient(135deg, #f4faea 0%, #edf7df 100%);
+}
+
+.hoveredCard {
+  z-index: 2;
+  border-color: #84bf43;
+  box-shadow: 0 12px 28px rgba(37, 50, 29, 0.12);
+  transform: translateY(-2px);
+
+  .actions {
+    opacity: 1;
+  }
+}
+
+.widgetLabel {
+  margin-bottom: 10px;
+  color: #6d7b64;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.widgetText {
+  line-height: 1.35;
+}
+
+.widgetSubtitle {
+  line-height: 1.5;
+  opacity: 0.68;
+}
+
+.actions {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  opacity: 0;
+  transition: opacity 150ms ease;
+}
+
+.inspectorTitle {
+  font-weight: 700;
+  color: #111827;
+}
+
+.paletteButton {
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+
+  &:hover {
+    border-color: #84bf43;
+    box-shadow: 0 4px 12px rgba(132, 191, 67, 0.13);
+  }
+}
+
+.swatches {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 8px;
+
+  span {
+    width: 24px;
+    height: 9px;
+    border-radius: 999px;
+  }
+}
+
+.dimensionCard {
+  padding: 11px 12px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #f8fafc;
+}
+
+.pageDimensionSummary {
+  padding: 12px;
+  border: 1px solid #dfe8d6;
+  border-radius: 10px;
+  background: #f6fbea;
+}

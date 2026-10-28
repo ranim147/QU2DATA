@@ -1,0 +1,248 @@
+{
+  "catalog": {
+    "standardization": "Standardize",
+    "normalization": "Normalization",
+    "encoding": "One-hot encoding",
+    "logTransform": "Log transformation",
+    "binning": "Binning",
+    "recode": "Recode",
+    "view": "View rows",
+    "sort": "Sort rows",
+    "filter": "Filter rows",
+    "concat": "Concatenate",
+    "calculate": "Calculate a variable",
+    "typeCorrection": "Correct types"
+  },
+  "typeCorrection": {
+    "title": "Type correction",
+    "description": "Review type recommendations and safely test a conversion before updating the current dataset.",
+    "catalogDescription": "Auto-cast date · number · boolean",
+    "correct": "Correct types",
+    "toCorrect": "Columns to review or correct",
+    "manual": "Manual correction",
+    "column": "Column",
+    "currentType": "Current type",
+    "suggestedType": "Suggested type",
+    "targetType": "Target type",
+    "reason": "Reason",
+    "test": "Test conversion",
+    "loadingRecommendations": "Loading type recommendations…",
+    "noRecommendations": "No recommendations in this section.",
+    "conversionFailures_one": "{{count}} value cannot be converted and will be replaced with null.",
+    "conversionFailures_other": "{{count}} values cannot be converted and will be replaced with null.",
+    "confirmWarning": "Confirm conversion with data loss",
+    "confirm": "Confirm despite losses",
+    "cancel": "Cancel",
+    "success": "Type correction applied successfully.",
+    "recommendationError": "Type recommendations could not be loaded.",
+    "conversionError": "Type conversion failed.",
+    "historyName": "Type correction",
+    "types": { "Int64": "Integer", "Float64": "Decimal", "String": "Text", "Boolean": "Boolean", "Date": "Date", "Datetime": "Date and time" }
+  },
+  "concat": {
+    "title": "Concatenate columns",
+    "description": "Combine multiple columns into a new column in the selected order.",
+    "catalogDescription": "Combine multiple columns",
+    "columns": "Columns to combine",
+    "orderHelp": "Columns are concatenated in their selection order.",
+    "separator": "Separator",
+    "separatorHelp": "Leave empty to join values without a separator.",
+    "newColumn": "New column name",
+    "keepOriginal": "Keep original columns",
+    "overwrite": "Allow replacing an existing destination column",
+    "submit": "Apply concatenation",
+    "historyName": "Column concatenation",
+    "success": "Columns concatenated successfully.",
+    "errors": {
+      "create": "The concatenation transformation could not be created.",
+      "execute": "Column concatenation failed."
+    },
+    "validation": {
+      "columns": "Select at least two different columns.",
+      "newColumn": "Enter a destination column name."
+    }
+  },
+  "calculate": {
+    "title": "Calculate a variable",
+    "description": "Create a numeric column from a formula using the selected columns.",
+    "catalogDescription": "Create a column with a formula",
+    "columns": "Numeric columns used by the formula",
+    "newColumn": "New column name",
+    "formula": "Formula",
+    "formulaHelp": "Supported: +, -, *, /, **, %, parentheses, abs() and round().",
+    "examples": "Examples: Price * Quantity · round(Revenue / Units, 2) · abs(Balance)",
+    "keepOriginal": "Keep source columns",
+    "overwrite": "Allow replacing an existing destination column",
+    "submit": "Calculate column",
+    "historyName": "Calculated column",
+    "success": "Column calculated successfully.",
+    "errors": {
+      "create": "The calculation transformation could not be created.",
+      "execute": "Column calculation failed."
+    },
+    "validation": {
+      "columns": "Select at least one numeric column without duplicates.",
+      "newColumn": "Enter a destination column name.",
+      "formula": "Enter a valid formula of at most 1000 characters."
+    }
+  },
+  "standardization": {
+    "title": "Standardize numeric columns",
+    "description": "Scale selected numeric columns and immediately update the current dataset.",
+    "columnsLabel": "Numeric columns",
+    "columnsDescription": "Select one or more numeric columns to standardize.",
+    "columnsPlaceholder": "Select numeric columns",
+    "methodLabel": "Standardization method",
+    "previewLimitLabel": "Preview limit",
+    "previewLimitDescription": "Number of rows generated in the backend preview (1–500).",
+    "noNumericColumns": "No numeric columns are available in the loaded dataset.",
+    "submit": "Standardize",
+    "historyName": "Standardization",
+    "success": "Standardization applied successfully.",
+    "errors": {
+      "create": "The standardization transformation could not be created.",
+      "execute": "Standardization failed."
+    },
+    "methods": {
+      "zScore": "Z-score",
+      "minMax": "Min-max",
+      "robust": "Robust (median and IQR)"
+    },
+    "validation": {
+      "columns": "Select at least one numeric column.",
+      "previewLimit": "Preview limit must be an integer from 1 to 500."
+    }
+  },
+  "normalization": {
+    "title": "Normalize numeric columns",
+    "description": "Apply Min-Max scaling to selected numeric columns and immediately update the current dataset.",
+    "columnsLabel": "Numeric columns",
+    "columnsDescription": "Select one or more numeric columns to normalize.",
+    "columnsPlaceholder": "Select numeric columns",
+    "previewLimitLabel": "Preview limit",
+    "previewLimitDescription": "Number of rows generated in the backend preview (1–500).",
+    "noNumericColumns": "No numeric columns are available in the loaded dataset.",
+    "submit": "Normalize",
+    "historyName": "Normalization - Min-Max",
+    "success": "Normalization applied successfully.",
+    "errors": {
+      "create": "The normalization transformation could not be created.",
+      "execute": "Normalization failed."
+    },
+    "validation": {
+      "columns": "Select at least one numeric column without duplicates.",
+      "previewLimit": "Preview limit must be an integer from 1 to 500."
+    }
+  },
+  "encoding": {
+    "title": "One-hot encoding",
+    "description": "Convert categorical values into binary 0/1 columns and immediately update the current dataset.",
+    "columnsLabel": "Columns to encode",
+    "columnsDescription": "Text, boolean, and detected low-cardinality numeric columns are available.",
+    "columnsPlaceholder": "Select categorical columns",
+    "dropFirstLabel": "Drop the first category",
+    "dropFirstDescription": "Omits the first sorted category to reduce redundant dummy columns.",
+    "dropOriginalLabel": "Drop original columns",
+    "dropOriginalDescription": "Removes the selected source columns after creating their binary columns.",
+    "previewLimitLabel": "Number of preview rows",
+    "noColumns": "No suitable categorical columns were detected in the loaded rows.",
+    "submit": "Apply encoding",
+    "historyName": "One-hot encoding",
+    "success": "Encoding applied successfully.",
+    "errors": {
+      "create": "The encoding transformation could not be created.",
+      "execute": "One-hot encoding failed."
+    },
+    "validation": {
+      "columns": "Select at least one column without duplicates.",
+      "previewLimit": "Preview limit must be an integer from 1 to 500."
+    }
+  },
+  "logTransform": {
+    "title": "Log transformation",
+    "description": "Analyze skewness and apply a supported logarithmic transformation to eligible numeric columns.",
+    "columnsLabel": "Numeric columns",
+    "columnsPlaceholder": "Select one or more numeric columns",
+    "methodLabel": "Log method",
+    "actionLabel": "Action",
+    "actions": {
+      "replace": "Replace original values",
+      "newColumn": "Create a new _log column",
+      "ignore": "Do not change values"
+    },
+    "analyze": "Analyze eligibility",
+    "apply": "Apply log transformation",
+    "noNumericColumns": "No numeric columns are available in the loaded dataset.",
+    "yes": "Yes",
+    "no": "No",
+    "results": {
+      "column": "Column",
+      "eligible": "Eligible",
+      "reason": "Reason",
+      "before": "Skewness before",
+      "after": "Skewness after",
+      "min": "Minimum"
+    },
+    "historyName": "Log transformation",
+    "success": "Log transformation applied successfully.",
+    "errors": {
+      "analyze": "Log transformation analysis failed.",
+      "create": "The log transformation could not be created.",
+      "execute": "Log transformation failed."
+    },
+    "validation": {
+      "columns": "Select at least one numeric column without duplicates."
+    }
+  },
+  "binning": {
+    "title": "Bin a numeric column",
+    "description": "Create a categorical column from explicit inclusive numeric ranges. Rules are evaluated in their displayed order.",
+    "source": "Numeric source column",
+    "newColumn": "New column name",
+    "rules": "Binning rules",
+    "label": "Label",
+    "min": "Minimum",
+    "max": "Maximum",
+    "defaultValue": "Default value outside all ranges (optional)",
+    "keepOriginal": "Keep the original column",
+    "overwrite": "Allow replacing an existing destination column",
+    "addRule": "Add range",
+    "remove": "Remove",
+    "submit": "Apply binning",
+    "historyName": "Binning",
+    "success": "Binning applied successfully.",
+    "errors": { "create": "The binning transformation could not be created.", "execute": "Binning failed." },
+    "validation": { "source": "Select a numeric source column.", "newColumn": "Enter a destination column name.", "rules": "Add at least one valid range with a label and minimum not greater than maximum." }
+  },
+  "rowOperations": {
+    "readOnly": "Display-only operation. The current dataset is never applied or changed.",
+    "view": { "title": "View rows" },
+    "sort": { "title": "Sort displayed rows" },
+    "filter": { "title": "Filter displayed rows" },
+    "page": "Page", "pageSize": "Rows per page", "columns": "Displayed columns (optional)",
+    "logic": "Combine conditions", "value": "Value", "asc": "Ascending", "desc": "Descending",
+    "addSort": "Add sort criterion", "addFilter": "Add condition", "remove": "Remove",
+    "run": "Refresh displayed table", "reset": "Reset", "result": "Displayed result",
+    "success": "The displayed table was refreshed. current.csv remains unchanged.", "error": "The row operation failed.",
+    "validation": { "sort": "Add at least one valid sort criterion.", "filter": "Add at least one complete filter condition." }
+  },
+  "recode": {
+    "title": "Recode a column",
+    "description": "Create a new column by mapping existing values to replacement values.",
+    "source": "Source column",
+    "newColumn": "New column name",
+    "rules": "Recode rules",
+    "oldValue": "Existing value",
+    "newValue": "New value",
+    "defaultValue": "Default value for unmatched values (optional)",
+    "keepOriginal": "Keep the original column",
+    "overwrite": "Allow replacing an existing destination column",
+    "addRule": "Add rule",
+    "remove": "Remove",
+    "submit": "Apply recode",
+    "historyName": "Recode",
+    "success": "Recode applied successfully.",
+    "errors": { "create": "The recode transformation could not be created.", "execute": "Recode failed." },
+    "validation": { "source": "Select a source column.", "newColumn": "Enter a destination column name.", "rules": "Add at least one complete recode rule.", "duplicates": "Existing values must be unique." }
+  }
+}

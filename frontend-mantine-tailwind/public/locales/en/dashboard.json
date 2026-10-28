@@ -1,0 +1,13 @@
+{
+  "eyebrow": "DataSense Pro",
+  "welcome": "Welcome, {{name}}",
+  "title": "Dashboard",
+  "subtitle": "Your data analysis workspace.",
+  "kpi_projects": "Projects",
+  "kpi_analyses": "Analyses",
+  "kpi_reports": "Reports",
+  "kpi_sources": "Data sources",
+  "empty_title": "Your analyses will appear here",
+  "empty_desc": "The analytics modules (import, processing, statistics, visualization, reports) are under development.",
+  "empty_badge": "Coming soon"
+}

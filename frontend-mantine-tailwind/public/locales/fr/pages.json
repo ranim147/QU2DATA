@@ -1,0 +1,37 @@
+{
+  "page_eyebrow": "STUDIO",
+  "page_title": "Studio de rapport",
+
+  "add_page": "Ajouter une page",
+  "rename_page": "Renommer la page",
+  "delete_page": "Supprimer la page",
+  "delete_confirm": "Supprimer la page « {{title}} » ?",
+
+  "load_error": "Impossible de charger les pages. Merci de réessayer dans un instant.",
+
+  "format_label": "Format de page",
+  "orientation_portrait": "Portrait",
+  "orientation_landscape": "Paysage",
+  "width_label": "Largeur (px)",
+  "height_label": "Hauteur (px)",
+
+  "format_group_paper": "Papier",
+  "format_group_screen": "Écran",
+  "format_group_custom": "Personnalisé",
+
+  "format_a4": "A4 (210 × 297 mm)",
+  "format_a3": "A3 (297 × 420 mm)",
+  "format_a2": "A2 (420 × 594 mm)",
+  "format_a1": "A1 (594 × 841 mm)",
+  "format_a0": "A0 (841 × 1189 mm)",
+  "format_letter": "Letter (8.5 × 11 po)",
+  "format_legal": "Legal (8.5 × 14 po)",
+  "format_tabloid": "Tabloid (11 × 17 po)",
+  "format_sixteen_nine": "16:9 (écran)",
+  "format_four_three": "4:3 (écran)",
+  "format_custom": "Personnalisé",
+
+  "page_indicator": "Page {{current}}/{{total}}",
+  "previous_page": "Page précédente",
+  "next_page": "Page suivante"
+}

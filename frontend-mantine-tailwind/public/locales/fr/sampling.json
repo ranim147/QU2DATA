@@ -1,0 +1,96 @@
+{
+  "title": "Échantillonnage",
+  "subtitle": "Choisissez une méthode, configurez le tirage et appliquez-le au fichier actif.",
+  "activeFile": "Fichier actif",
+  "activeFileLoading": "Chargement du nom du fichier…",
+  "loadingRoute": "Chargement du projet et du fichier…",
+  "noActiveFile": {
+    "title": "Aucun fichier actif",
+    "description": "Ouvrez un projet et choisissez l’action Échantillonner sur un fichier."
+  },
+  "methodSelector": {
+    "title": "Méthode d’échantillonnage",
+    "description": "Sélectionnez la stratégie adaptée à vos données."
+  },
+  "methods": {
+    "simpleRandom": {"title": "Aléatoire simple", "description": "Chaque ligne possède la même probabilité d’être tirée."},
+    "systematic": {"title": "Systématique", "description": "Sélectionne les lignes selon un intervalle régulier."},
+    "stratified": {"title": "Stratifié", "description": "Préserve ou équilibre les groupes d’une colonne."},
+    "bootstrap": {"title": "Bootstrap", "description": "Tirage avec remplacement pour l’analyse statistique."},
+    "quotas": {"title": "Quotas", "description": "Impose un nombre de lignes pour des groupes précis."}
+  },
+  "calculator": {
+    "title": "Calculateur de taille",
+    "description": "Estimation locale avec la formule de Cochran et correction de population finie.",
+    "population": "Population N",
+    "margin": "Marge d’erreur (%)",
+    "prevalence": "Prévalence p (%)",
+    "summary": "n₀ = {{n0}} · n avec FPC = {{n}} · z = {{z}} · marge = {{margin}} %",
+    "apply": "Appliquer n = {{n}}"
+  },
+  "fields": {
+    "sizeMode": "Mode de taille",
+    "size": "Taille",
+    "sampleSize": "Taille de l’échantillon",
+    "optionalSampleSize": "Taille facultative",
+    "seed": "Graine aléatoire",
+    "confidence": "Niveau de confiance",
+    "strateColumn": "Colonne de strate",
+    "mode": "Répartition",
+    "quotaColumns": "Colonnes de quota",
+    "target": "Cible",
+    "allowUnderfilled": "Accepter les quotas incomplets"
+  },
+  "modes": {
+    "n": "Nombre de lignes",
+    "percent": "Pourcentage",
+    "k": "Intervalle k",
+    "proportionnel": "Proportionnel",
+    "equilibre": "Équilibré"
+  },
+  "help": {
+    "systematic": {
+      "n": "n indique le nombre de lignes souhaitées.",
+      "percent": "Le pourcentage est calculé sur le dataset courant.",
+      "k": "Une ligne est sélectionnée toutes les k lignes."
+    },
+    "bootstrap": "Le tirage est effectué avec remplacement : une ligne peut apparaître plusieurs fois.",
+    "stratified": {
+      "proportionnel": "Conserve les proportions observées dans chaque strate.",
+      "equilibre": "Répartit l’échantillon aussi également que possible entre les strates."
+    }
+  },
+  "validation": {
+    "invalid": "Vérifiez les valeurs saisies.",
+    "sizePositive": "La taille doit être strictement supérieure à 0.",
+    "percentMaximum": "Le pourcentage ne peut pas dépasser 100.",
+    "seedInteger": "La graine doit être un nombre entier."
+  },
+  "confirmation": {
+    "title": "Confirmer l’échantillonnage",
+    "description": "Le résultat remplacera current.csv. original.csv restera inchangé. Voulez-vous continuer ?",
+    "confirm": "Exécuter"
+  },
+  "actions": {
+    "execute": "Exécuter l’échantillonnage",
+    "backToProject": "Retour au projet",
+    "openProject": "Ouvrir un projet",
+    "addCell": "Ajouter une cellule",
+    "removeCell": "Supprimer"
+  },
+  "success": "Échantillonnage appliqué avec succès.",
+  "errors": {"execution": "L’échantillonnage a échoué."},
+  "result": {
+    "title": "Résultat du tirage",
+    "totalRows": "Population initiale",
+    "sampleSize": "Échantillon tiré",
+    "seed": "Graine",
+    "confidence": "Confiance",
+    "margin": "Marge d’erreur",
+    "offset": "Décalage",
+    "strata": "Nombre de strates",
+    "quotas": "Quotas demandés et sélectionnés",
+    "preview": "Aperçu",
+    "noPreview": "Aucune ligne d’aperçu n’a été retournée."
+  }
+}

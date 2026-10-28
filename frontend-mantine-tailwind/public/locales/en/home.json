@@ -1,0 +1,60 @@
+{
+  "nav": {
+    "features": "Features",
+    "how": "How it works",
+    "login": "Log in",
+    "dashboard": "Dashboard"
+  },
+  "hero": {
+    "badge": "Data Analytics Platform",
+    "title_1": "Analyze, process and visualize your data",
+    "title_highlight": "in just a few clicks",
+    "subtitle": "DataSense Pro delivers the analytical power of professional software with the simplicity of a consumer app. No code, no specialized training.",
+    "cta_start": "Get started",
+    "cta_discover": "Discover",
+    "kpi_satisfaction": "Satisfaction",
+    "kpi_nps": "NPS",
+    "kpi_responses": "Respondents"
+  },
+  "stats": {
+    "modules": "integrated modules",
+    "tests": "statistical tests",
+    "charts": "chart types",
+    "exports": "export formats"
+  },
+  "features": {
+    "title": "The whole analysis cycle, in one place",
+    "subtitle": "Six integrated modules cover 100% of survey and market data analysis needs.",
+    "m1_title": "Data import & management",
+    "m1_desc": "CSV, Excel, SPSS, SQL databases, APIs… Full variable dictionary and automatic quality dashboard on import.",
+    "m2_title": "Processing & preparation",
+    "m2_desc": "Cleaning, recoding, Top 2 Box, weighting and raking, sampling — all point-and-click.",
+    "m3_title": "Descriptive statistics",
+    "m3_desc": "Univariate, bivariate and multivariate analyses (PCA, clustering), Excel-grade pivot tables.",
+    "m4_title": "Statistical tests",
+    "m4_desc": "20+ parametric and non-parametric tests with a guided selection assistant and automatic interpretation.",
+    "m5_title": "Advanced visualization",
+    "m5_desc": "3-step chart builder, 30+ chart types, significance testing, dynamic filters and real-time preview.",
+    "m6_title": "Reports & export",
+    "m6_desc": "One-click branded automatic reports: PowerPoint, Word, PDF, Excel, shareable interactive dashboards."
+  },
+  "how": {
+    "title": "How it works",
+    "subtitle": "From raw data to final report in three steps.",
+    "step1_title": "Import",
+    "step1_desc": "Drag and drop your file or connect your source. The platform detects everything automatically.",
+    "step2_title": "Analyze",
+    "step2_desc": "Statistics, tests and charts in a few clicks, with automatic recommendations.",
+    "step3_title": "Share",
+    "step3_desc": "Generate a professional branded report and share it with your team or clients."
+  },
+  "cta": {
+    "title": "Ready to democratize data analysis?",
+    "subtitle": "Create an account and run your first complete analysis in under 30 minutes.",
+    "button": "Create an account"
+  },
+  "footer": {
+    "tagline": "Intelligent data analysis, processing and visualization platform.",
+    "rights": "All rights reserved."
+  }
+}

@@ -1,0 +1,11 @@
+@import "style.css";
+@tailwind components;
+@tailwind utilities;
+
+body > #__next {
+  @apply min-h-screen;
+}
+@layer tailwind {
+  @tailwind base;
+}
+

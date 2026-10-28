@@ -1,0 +1,8 @@
+{
+  "title": "Admin Dashboard",
+  "subtitle": "Manage user accounts and access control.",
+  "users_title": "Users",
+  "users_desc": "Manage platform accounts and credentials",
+  "roles_title": "Roles & permissions",
+  "roles_desc": "Configure role-based access control"
+}

@@ -1,0 +1,61 @@
+{
+  "nav": {
+    "features": "Fonctionnalités",
+    "how": "Comment ça marche",
+    "login": "Se connecter",
+        "dashboard": "Tableau de bord"
+
+  },
+  "hero": {
+    "badge": "Plateforme Data Analytics",
+    "title_1": "Analysez, traitez et visualisez vos données",
+    "title_highlight": "en quelques clics",
+    "subtitle": "DataSense Pro offre la puissance analytique d'un logiciel professionnel avec la simplicité d'une application grand public. Sans code, sans formation spécialisée.",
+    "cta_start": "Commencer",
+    "cta_discover": "Découvrir",
+    "kpi_satisfaction": "Satisfaction",
+    "kpi_nps": "NPS",
+    "kpi_responses": "Répondants"
+  },
+  "stats": {
+    "modules": "modules intégrés",
+    "tests": "tests statistiques",
+    "charts": "types de graphiques",
+    "exports": "formats d'export"
+  },
+  "features": {
+    "title": "Tout le cycle d'analyse, au même endroit",
+    "subtitle": "Six modules intégrés couvrent 100% des besoins d'analyse de données d'enquête et de marché.",
+    "m1_title": "Import & gestion des données",
+    "m1_desc": "CSV, Excel, SPSS, bases SQL, APIs… Dictionnaire de variables complet et dashboard qualité automatique à l'import.",
+    "m2_title": "Traitement & préparation",
+    "m2_desc": "Nettoyage, recodage, Top 2 Box, pondération et redressement (raking), échantillonnage — en point-and-click.",
+    "m3_title": "Statistiques descriptives",
+    "m3_desc": "Analyses univariées, bivariées et multivariées (ACP, clustering), tableaux croisés dynamiques type Excel.",
+    "m4_title": "Tests statistiques",
+    "m4_desc": "Plus de 20 tests paramétriques et non-paramétriques avec assistant de sélection et interprétation automatique.",
+    "m5_title": "Visualisation avancée",
+    "m5_desc": "Chart builder en 3 étapes, 30+ types de graphiques, significativité, filtres dynamiques et prévisualisation temps réel.",
+    "m6_title": "Rapports & export",
+    "m6_desc": "Rapports automatiques brandés en un clic : PowerPoint, Word, PDF, Excel, dashboards interactifs partageables."
+  },
+  "how": {
+    "title": "Comment ça marche",
+    "subtitle": "De vos données brutes au rapport final en trois étapes.",
+    "step1_title": "Importez",
+    "step1_desc": "Glissez-déposez votre fichier ou connectez votre source. La plateforme détecte tout automatiquement.",
+    "step2_title": "Analysez",
+    "step2_desc": "Statistiques, tests et graphiques en quelques clics, avec recommandations automatiques.",
+    "step3_title": "Partagez",
+    "step3_desc": "Générez un rapport professionnel à votre marque et partagez-le avec votre équipe ou vos clients."
+  },
+  "cta": {
+    "title": "Prêt à démocratiser l'analyse de données ?",
+    "subtitle": "Créez un compte et réalisez votre première analyse complète en moins de 30 minutes.",
+    "button": "Créer un compte"
+  },
+  "footer": {
+    "tagline": "Plateforme intelligente d'analyse, de traitement et de visualisation de données.",
+    "rights": "Tous droits réservés."
+  }
+}

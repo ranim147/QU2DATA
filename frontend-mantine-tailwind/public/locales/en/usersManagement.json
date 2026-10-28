@@ -1,0 +1,19 @@
+{
+  "email": "Email",
+  "user_name": "User Name",
+  "lastLogin": "Last Login",
+  "role": "Role",
+  "isActive": "Active",
+  "isBanned": "Banned",
+  "actions": {
+    "title": "Actions",
+    "create": "Add a new user",
+    "edit": "Edit user"
+  },
+  "confirm": {
+    "delete": {
+      "description": "Are u sure to delete this user",
+      "title": "delete user"
+    }
+  }
+}

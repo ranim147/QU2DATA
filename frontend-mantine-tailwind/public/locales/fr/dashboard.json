@@ -1,0 +1,13 @@
+{
+  "eyebrow": "DataSense Pro",
+  "welcome": "Bienvenue, {{name}}",
+  "title": "Tableau de bord",
+  "subtitle": "Votre espace d'analyse de données.",
+  "kpi_projects": "Projets",
+  "kpi_analyses": "Analyses",
+  "kpi_reports": "Rapports",
+  "kpi_sources": "Sources de données",
+  "empty_title": "Vos analyses apparaîtront ici",
+  "empty_desc": "Les modules analytics (import, traitement, statistiques, visualisation, rapports) sont en cours de développement.",
+  "empty_badge": "Bientôt disponible"
+}

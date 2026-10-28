@@ -1,0 +1,10 @@
+{
+  "title": "Title",
+  "bad_credentials": "Incorrect credentials. Please try again.",
+  "ops_error": "An error occurred. Please try again later.",
+  "create": "Create",
+  "select": "Select an item",
+  "delete": "Delete",
+  "cancel": "Cancel",
+  "save": "Save"
+}

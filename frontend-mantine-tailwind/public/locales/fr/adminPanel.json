@@ -1,0 +1,8 @@
+{
+  "title": "Tableau de bord administrateur",
+  "subtitle": "Gérez les comptes utilisateurs et le contrôle d'accès.",
+  "users_title": "Utilisateurs",
+  "users_desc": "Gérer les comptes et les identifiants de la plateforme",
+  "roles_title": "Rôles & permissions",
+  "roles_desc": "Configurer le contrôle d'accès basé sur les rôles"
+}

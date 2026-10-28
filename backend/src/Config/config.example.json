@@ -1,0 +1,25 @@
+﻿{
+    "env":  "dev",
+    "backendRouter":  "http://localhost:5000",
+    "frontendRouter":  "http://localhost:3000",
+    "secretKey":  "CHANGE_ME",
+    "db_host":  "localhost",
+    "db_name":  "qu2_datasense_pro",
+    "db_user":  "postgres",
+    "db_password":  "CHANGE_ME",
+    "db_dialect":  "postgres",
+    "db_port":  5432,
+    "DATA_SOURCE_ENCRYPTION_KEY":  "REPLACE_WITH_BASE64_ENCODED_32_BYTE_KEY",
+    "db_dialectOptions":  {
+
+                          },
+    "db_define":  {
+
+                  },
+    "fast_api_micro_services_config":  {
+                                           "api_key":  "CHANGE_ME",
+                                           "api_secret":  "CHANGE_ME",
+                                           "token_expire":  "30",
+                                           "fastApiUrl":  "http://localhost:8000"
+                                       }
+}

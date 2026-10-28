@@ -1,0 +1,14 @@
+{
+  "roles": "Gestion des Roles",
+  "users": "Gestion des utilisateurs",
+  "applications": "Gestion des applications",
+  "contacts": "Contacts",
+  "resources": "Ressources",
+  "blogs": "Blogs",
+  "projects": "Projets",
+  "data_source": "Source de données",
+  "transformations": "Transformations",
+  "Sampling": "Échantillonnage",
+  "data-quality": "Data Quality",
+  "dictionary": "Dictionnaire"
+}
